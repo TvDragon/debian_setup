@@ -85,6 +85,8 @@ sudo apt install neofetch -y
 sudo apt install sqlitebrowser -y
 # Install qemu+kvm virt-manager
 sudo apt install virt-manager qemu -y
+# Install firefox
+sudo apt install firefox-esr -y
 # Install sdk
 cd
 sudo apt install curl unzip zip -y
