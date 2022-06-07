@@ -16,6 +16,8 @@
 ;
 ;==========================================================
 
+include-file = $HOME/.config/polybar/modules.ini
+
 [colors]
 background = #AA2F343F
 background-alt = #373B41
@@ -25,7 +27,7 @@ secondary = #8ABEB7
 alert = #A54242
 disabled = #707880
 
-[bar/example]
+[bar/top]
 width = 100%
 height = 24pt
 #radius = 6
@@ -65,116 +67,6 @@ enable-ipc = true
 ; wm-restack = i3
 
 ; override-redirect = true
-
-[module/xworkspaces]
-type = internal/xworkspaces
-
-label-active = %name%
-label-active-background = ${colors.background-alt}
-label-active-underline= ${colors.primary}
-label-active-padding = 1
-
-label-occupied = %name%
-label-occupied-padding = 1
-
-label-urgent = %name%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-
-label-empty = %name%
-label-empty-foreground = ${colors.disabled}
-label-empty-padding = 1
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:60:...%
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume-prefix = "VOL "
-format-volume-prefix-foreground = ${colors.primary}
-format-volume = <label-volume>
-
-label-volume = %percentage%%
-
-label-muted = muted
-label-muted-foreground = ${colors.disabled}
-
-click-right = pavucontrol&
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-label-layout = %layout%
-label-layout-foreground = ${colors.primary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-foreground = ${colors.background}
-label-indicator-background = ${colors.secondary}
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "RAM "
-format-prefix-foreground = ${colors.primary}
-label = %percentage_used:2%%
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = "CPU "
-format-prefix-foreground = ${colors.primary}
-label = %percentage:2%%
-
-[module/battery]
-type = internal/battery
-; Use the following command to list batteries and adapters:
-; $ ls -1 /sys/class/power_supply/
-battery = BAT1
-adapter = ACAD
-; This is useful in case the battery never reports 100% charge
-full-at = 98
-low-at = 10
-poll-interval = 5
-label-charging = Charging %percentage%%
-format-charging-padding = 1
-format-charging-foreground = ${colors.foreground}
-label-discharging = Remaining %percentage%%
-format-discharging-foreground = ${colors.foreground}
-format-discharging-padding = 1
-bar-capacity-width = 10
-
-[network-base]
-type = internal/network
-interval = 5
-format-connected = <label-connected>
-format-disconnected = <label-disconnected>
-label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
-
-[module/wlan]
-inherit = network-base
-interface-type = wireless
-label-connected = %essid%
-
-[module/eth]
-inherit = network-base
-interface-type = wired
-label-connected = %{F#F0C674}%ifname%%{F-}
-
-[module/date]
-type = internal/date
-interval = 1
-
-time = "%a, %b %d %H:%M"
-
-format = <label>
-format-foreground = ${colors.primary}
-format-padding = 1
-label = %{T1}%time%%{T-}
-label-padding = 1
 
 [settings]
 screenchange-reload = true
