@@ -1,3 +1,4 @@
 #!/bin/sh
 
-exec bspwm
+/usr/bin/lxpolkit&
+dbus-run-session bspwm
