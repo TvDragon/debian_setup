@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Manually typed in CLI
 # Manual (root user)
 # su -
 # usermod -aG sudo username
