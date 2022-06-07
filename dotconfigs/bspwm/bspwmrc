@@ -1,9 +1,7 @@
 #! /bin/sh
 
-# Monitor Workspaces
 bspc monitor -d I II III IV V
 
-# Other Stuff
 bspc config border_width         2
 bspc config window_gap          12
 
@@ -17,9 +15,7 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-#Autostart
 sxhkd &
 picom &
-#feh --bg-fill --randomize ~/Pictures/wallpapers/*
 feh --bg-fill ~/Pictures/wallpapers/wave-dark.png
 $HOME/.config/polybar/launch.sh
