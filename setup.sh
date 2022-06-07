@@ -87,6 +87,8 @@ sudo apt install sqlitebrowser -y
 sudo apt install virt-manager qemu -y
 # Install firefox
 sudo apt install firefox-esr -y
+# Install okular pdf viewer
+sudo apt install okular
 # Install sdk
 cd
 sudo apt install curl unzip zip -y
