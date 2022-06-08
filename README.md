@@ -1,4 +1,4 @@
-# Polar Space
+<h1 align="center">Polar Space<h1>
 
 Polar Space is a minimialistic Linux setup for Debian using the Nord Polar Night Theme. This setup uses BSPWM as the tilting window manager.
 
