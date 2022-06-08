@@ -28,5 +28,6 @@ Polar Space is a minimialistic Linux setup for Debian using the Nord Polar Night
 
 	Before running the script you may wish to use a different terminal emulator. If so, then open up ``setup.sh`` script and change xfce4-terminal to your desired terminal emulator. Afterwards open up ``dotconfigs/sxhkd/sxhkdrc`` and change and change the command ``xfce4-terminal`` to the command for your desired terminal emulator
 6. Run the ``setup.sh`` script:
+
 		sh setup.sh
 
