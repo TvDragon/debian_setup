@@ -18,12 +18,22 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # firefox
-super + f
+super + e
 	firefox
 
 # thunar
 super + d
 	thunar
+
+# Volume
+super + {8}
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+super + {9}
+	pactl set-sink-volume @DEFAULT_SINK@ -2%
+
+super + {0}
+	pactl set-sink-volume @DEFAULT_SINK@ +2%
 
 #
 # bspwm hotkeys
