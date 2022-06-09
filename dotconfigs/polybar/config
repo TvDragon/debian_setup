@@ -26,6 +26,8 @@ primary = #F0C674
 secondary = #8ABEB7
 alert = #A54242
 disabled = #707880
+red = #FF0000
+yellow = #FFFF00
 
 [bar/top]
 width = 100%
@@ -52,6 +54,8 @@ separator = |
 separator-foreground = ${colors.disabled}
 
 font-0 = monospace;size=10;2
+font-1 = "JetBrains Mono Nerd Font:size=10;2"
+font-2 = "FiraCode Nerd Font:size=10;2"
 
 modules-left = xworkspaces
 modules-center = xwindow
