@@ -17,8 +17,8 @@ sudo apt install network-manager -y	# Network Manager and NM Gui
 # Install cli-visualizer
 cd ~/Downloads/
 export TERM=rxvt-256color
-sudo apt-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool -y
-git clone https://github.com/dpayne/cli-visualizer.gitcd cli-visualizer
+sudo apt-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool cmake -y
+git clone https://github.com/dpayne/cli-visualizer.git
 cd cli-visualizer
 ./install.sh
 # Copy directories over
