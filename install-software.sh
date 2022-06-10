@@ -65,13 +65,6 @@ sudo apt install virt-manager qemu -y
 sudo apt install firefox-esr -y
 # Install okular pdf viewer
 sudo apt install okular
-# Install cli-visualizer
-cd ~/Downloads/
-export TERM=rxvt-256color
-sudo apt-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool -y
-git clone https://github.com/dpayne/cli-visualizer.gitcd cli-visualizer
-cd cli-visualizer
-./install.sh
 # Install sdk
 cd
 sudo apt install curl unzip zip -y
