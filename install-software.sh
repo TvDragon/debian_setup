@@ -47,7 +47,8 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
 echo 'deb https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
 sudo apt update && sudo apt install onlyoffice-desktopeditors -y
 # Install zoom
-wget https://zoom.us/client/latest/zoom_amd64.debsudo apt dpkg -i ./zoom_amd64.deb
+wget https://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install ./zoom_amd64.deb -y
 # Install pip3
 sudo apt install python3-pip -y
 # Install pip libraries - flask, pygame
