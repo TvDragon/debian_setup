@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/usr/bin/lxpolkit&
+/usr/bin/lxpolkit &
 dbus-run-session bspwm
