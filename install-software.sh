@@ -60,7 +60,8 @@ sudo apt install neofetch -y
 # Install sqlitebrowser
 sudo apt install sqlitebrowser -y
 # Install qemu+kvm virt-manager
-sudo apt install virt-manager qemu -y
+sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
+sudo systemctl enable libvirtd
 # Install firefox
 sudo apt install firefox-esr -y
 # Install okular pdf viewer
