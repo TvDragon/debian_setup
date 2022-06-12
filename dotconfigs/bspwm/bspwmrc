@@ -18,7 +18,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 #Autostart
-picom &
-feh --bg-fill ~/Pictures/wallpapers/ign_astronaut.png
-$HOME/.config/polybar/launch.sh
 sxhkd &
+picom &
+feh --bg-fill ~/Pictures/Wallpapers/ign_astronaut.png
+$HOME/.config/polybar/launch.sh
