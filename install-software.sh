@@ -6,6 +6,7 @@
 # Install applications
 cd
 cd Downloads/
+# Install text editors
 sudo apt install nano vim -y
 # Install build-essentials for GCC/G++ compiler and make
 sudo apt install build-essential valgrind -y
@@ -59,13 +60,15 @@ sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
 sudo apt install neofetch -y
 # Install sqlitebrowser
 sudo apt install sqlitebrowser -y
-# Install qemu+kvm virt-manager
-sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
-sudo systemctl enable libvirtd
 # Install firefox
 sudo apt install firefox-esr -y
 # Install okular pdf viewer
 sudo apt install okular -y
+# Install qemu+kvm virt-manager
+sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
+sudo systemctl enable libvirtd
+sudo usermod -aG sudo libvirtd		# Add libvirtd to sudo group
+sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
 # Install sdk
 cd
 sudo apt install curl unzip zip -y
