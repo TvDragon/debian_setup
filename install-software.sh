@@ -67,7 +67,7 @@ sudo apt install okular -y
 # Install qemu+kvm virt-manager
 sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
 sudo systemctl enable libvirtd
-sudo usermod -aG sudo libvirtd		# Add libvirtd to sudo group
+sudo usermod -aG sudo libvirt-qemu	# Add libvirtd to sudo group
 sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
 # Install sdk
 cd
