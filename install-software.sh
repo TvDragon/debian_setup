@@ -64,6 +64,8 @@ sudo apt install sqlitebrowser -y
 sudo apt install firefox-esr -y
 # Install okular pdf viewer
 sudo apt install okular -y
+# Install task manager
+sudo apt install xfce4-taskmanager -y
 # Install qemu+kvm virt-manager
 sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
 sudo systemctl enable libvirtd
