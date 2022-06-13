@@ -8,7 +8,7 @@ cd
 cd Downloads/
 sudo apt install nano vim -y
 # Install build-essentials for GCC/G++ compiler and make
-sudo apt install build-essential -y
+sudo apt install build-essential valgrind -y
 # Install java
 sudo apt install openjdk-17-jdk -y
 # Install vscode
