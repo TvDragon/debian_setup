@@ -27,6 +27,11 @@ mv polar_space/fonts/* ~/.fonts/
 mv polar_space/.xinitrc ~/.
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/polybar/launch.sh
+# Install firmware drivers for intel wireless cards
+sudo apt install firmware-iwlwifi -y
+# Install nvidia-drivers
+sudo apt install nvidia-detect -y
+sudo apt install nvidia-driver -y
 # Install cli-visualizer
 cd ~/Downloads/
 export TERM=rxvt-256color
