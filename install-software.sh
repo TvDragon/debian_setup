@@ -66,6 +66,8 @@ sudo apt install firefox-esr -y
 sudo apt install okular -y
 # Install task manager
 sudo apt install xfce4-taskmanager -y
+# Install firmware drivers for intel wireless cards
+sudo apt install firmware-iwlwifi -y
 # Install qemu+kvm virt-manager
 sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
 sudo systemctl enable libvirtd
