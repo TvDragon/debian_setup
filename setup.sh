@@ -14,6 +14,8 @@
 sudo apt install libnotify-bin notify-osd dunst -y
 sudo apt install bspwm polybar sxhkd pulseaudio pavucontrol thunar rofi suckless-tools picom xfce4-terminal lxpolkit feh lxappearance -y # suckless-tools = dmenu, lxpolkit = xfce-polkit (not on debian)
 sudo apt install network-manager -y	# Network Manager and NM Gui
+# Make directory so applications like spotify can be opened using rofi
+sudo mkdir /usr/share/desktop-directories/
 # Copy directories over
 cd
 mkdir .config .icons .themes .fonts
