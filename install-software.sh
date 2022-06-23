@@ -62,8 +62,8 @@ sudo apt install neofetch -y
 sudo apt install sqlitebrowser -y
 # Install firefox
 sudo apt install firefox-esr -y
-# Install okular pdf viewer
-sudo apt install okular -y
+# Install evince pdf viewer
+sudo apt install evince -y
 # Install task manager
 sudo apt install xfce4-taskmanager -y
 # Install qemu+kvm virt-manager
