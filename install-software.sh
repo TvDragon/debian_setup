@@ -6,36 +6,52 @@
 # Install applications
 cd
 cd Downloads/
+# Install firmware drivers for intel wireless cards
+sudo apt install firmware-iwlwifi -y
+# Install nvidia-drivers
+sudo apt install nvidia-detect -y
+sudo apt install nvidia-driver -y
+# Install cli-visualizer
+# cd ~/Downloads/
+# export TERM=rxvt-256color
+# sudo apt-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool cmake -y
+# git clone https://github.com/dpayne/cli-visualizer.git
+# cd cli-visualizer
+# ./install.sh
 # Install text editors
 sudo apt install nano vim -y
 # Install build-essentials for GCC/G++ compiler and make
 sudo apt install build-essential valgrind -y
 # Install java
 sudo apt install openjdk-17-jdk -y
-# Install vscode
-sudo apt install curl apt-transport-https -y
-curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/ms-vscode-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
-sudo apt update -y
-sudo apt install code -y
-# Install sublime-text
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-sudo apt install apt-transport-https -y
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt update
-sudo apt install sublime-text -y
-# Install gparted, timeshift, krita, gimp, mate-calculator
-sudo apt install gparted timeshift krita gimp mate-calc -y
-# Install spotify
-curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt update && sudo apt install spotify-client -y
+# # Install vscode
+# sudo apt install curl apt-transport-https -y
+# curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/ms-vscode-keyring.gpg
+# echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+# sudo apt update -y
+# sudo apt install code -y
+# # Install sublime-text
+# wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+# sudo apt install apt-transport-https -y
+# echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+# sudo apt update
+# sudo apt install sublime-text -y
+# # Install timeshift, krita, gimp
+# sudo apt install timeshift krita gimp -y
+# Install gparted
+sudo apt install
+# Install mate-calculator
+sudo apt install mate-calc -y
+# # Install spotify
+# curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -
+# echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+# sudo apt update && sudo apt install spotify-client -y
 # Install typora
-sudo apt install software-properties-common -y
-wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
-sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo apt update
-sudo apt install typora -y
+# sudo apt install software-properties-common -y
+# wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+# sudo add-apt-repository 'deb https://typora.io/linux ./'
+# sudo apt update
+# sudo apt install typora -y
 # Install discord
 wget -O discord.deb "https://discord.com/api/download?platform=linux&format=deb"
 dpkg-deb -x discord.deb unpack
@@ -66,20 +82,20 @@ sudo apt install firefox-esr -y
 sudo apt install evince -y
 # Install task manager
 sudo apt install xfce4-taskmanager -y
-# Install qemu+kvm virt-manager
-sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
-sudo systemctl enable libvirtd
-sudo usermod -aG sudo libvirt-qemu	# Add libvirtd to sudo group
-sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
+# # Install qemu+kvm virt-manager
+# sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
+# sudo systemctl enable libvirtd
+# sudo usermod -aG sudo libvirt-qemu	# Add libvirtd to sudo group
+# sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
 # Install sdk
 cd
 sudo apt install curl unzip zip -y
 curl -s "http://get.sdkman.io" | bash
 # Needs to manually be typed below
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-# Install gradle
-sdk install gradle 7.4
-sdk use gradle 7.4
+# source "$HOME/.sdkman/bin/sdkman-init.sh"
+# # Install gradle
+# sdk install gradle 7.4
+# sdk use gradle 7.4
 # Delete all directories and files in Downloads folder
 cd ~/Downloads/
 rm -r *
