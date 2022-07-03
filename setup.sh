@@ -10,6 +10,9 @@
 # sudo apt install git -y
 # git clone https://github.com/TvDragon/polar_space
 
+# Firmware
+mkdir ~/lib/firmware/rtl_nic/
+sudo cp ~/Downloads/*.fw ~/lib/firmware/rtl_nic/
 # Desktop Setup
 sudo apt install libnotify-bin notify-osd dunst -y
 sudo apt install bspwm polybar sxhkd pulseaudio pavucontrol thunar rofi suckless-tools picom xfce4-terminal lxpolkit feh lxappearance -y # suckless-tools = dmenu, lxpolkit = xfce-polkit (not on debian)

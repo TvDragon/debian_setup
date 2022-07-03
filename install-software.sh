@@ -71,6 +71,13 @@ sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-syste
 sudo systemctl enable libvirtd
 sudo usermod -aG sudo libvirt-qemu	# Add libvirtd to sudo group
 sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
+# Install cli-visualizer
+cd ~/Downloads/
+export TERM=rxvt-256color
+sudo apt-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool cmake -y
+git clone https://github.com/dpayne/cli-visualizer.git
+cd cli-visualizer
+./install.sh
 # Install sdk
 cd
 sudo apt install curl unzip zip -y
