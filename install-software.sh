@@ -6,8 +6,6 @@
 # Install applications
 cd
 cd Downloads/
-# Install firmware drivers for intel wireless cards
-sudo apt install firmware-iwlwifi -y
 # Install nvidia-drivers
 sudo apt install nvidia-detect -y
 sudo apt install nvidia-driver -y
