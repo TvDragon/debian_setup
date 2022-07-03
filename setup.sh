@@ -32,19 +32,7 @@ mv polar_space/fonts/* ~/.fonts/
 mv polar_space/.xinitrc ~/.
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/polybar/launch.sh
-# Install firmware drivers for intel wireless cards
-sudo apt install firmware-iwlwifi -y
-# Install nvidia-drivers
-sudo apt install nvidia-detect -y
-sudo apt install nvidia-driver -y
-# Install cli-visualizer
-cd ~/Downloads/
-export TERM=rxvt-256color
-sudo apt-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool cmake -y
-git clone https://github.com/dpayne/cli-visualizer.git
-cd cli-visualizer
-./install.sh
-# Install login manager
+# Install display manager
 sudo apt install sddm -y
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
