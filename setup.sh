@@ -15,10 +15,8 @@ sudo mv sources.list /etc/apt/sources.list
 sudo apt update && sudo apt upgrade -y
 # Firmware
 mkdir ~/lib/firmware/rtl_nic/
-sudo cp ~/Downloads/*.fw ~/lib/firmware/rtl_nic/
+sudo mv rtl_nic/*.fw ~/lib/firmware/rtl_nic/
 sudo update-initramfs -u
-# Install firmware drivers for intel wireless cards
-sudo apt install firmware-iwlwifi -y
 # Desktop Setup
 sudo apt install libnotify-bin notify-osd dunst -y
 sudo apt install bspwm polybar sxhkd pulseaudio pavucontrol thunar rofi suckless-tools picom xfce4-terminal lxpolkit feh lxappearance -y # suckless-tools = dmenu, lxpolkit = xfce-polkit (not on debian)
@@ -43,7 +41,6 @@ sudo apt install sddm -y
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
 # Setup bluetooth
-sudo apt install firmware-atheros -y
 sudo apt-get install bluez* -y
 sudo apt-get install blueman -y
 sudo systemctl enable bluetooth.service

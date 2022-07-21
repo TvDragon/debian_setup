@@ -6,6 +6,9 @@
 # Install applications
 cd
 cd Downloads/
+# Install firmware drivers for intel and qualcomm atheros wireless cards
+sudo apt install firmware-iwlwifi -y
+sudo apt install firmware-atheros -y
 # Install nvidia-drivers
 sudo apt install nvidia-detect -y
 sudo apt install nvidia-driver -y
