@@ -9,6 +9,11 @@ cd Downloads/
 # Install firmware drivers for intel and qualcomm atheros wireless cards
 sudo apt install firmware-iwlwifi -y
 sudo apt install firmware-atheros -y
+# Setup bluetooth
+sudo apt-get install bluez* -y
+sudo apt-get install blueman -y
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
 # Install nvidia-drivers
 sudo apt install nvidia-detect -y
 sudo apt install nvidia-driver -y

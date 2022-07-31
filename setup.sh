@@ -14,8 +14,8 @@
 sudo mv sources.list /etc/apt/sources.list
 sudo apt update && sudo apt upgrade -y
 # Firmware
-mkdir ~/lib/firmware/rtl_nic/
-sudo mv rtl_nic/*.fw ~/lib/firmware/rtl_nic/
+mkdir /lib/firmware/rtl_nic/
+sudo mv rtl_nic/*.fw /lib/firmware/rtl_nic/
 sudo update-initramfs -u
 # Desktop Setup
 sudo apt install libnotify-bin notify-osd dunst -y
@@ -40,9 +40,4 @@ chmod +x ~/.config/polybar/launch.sh
 sudo apt install sddm -y
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
-# Setup bluetooth
-sudo apt-get install bluez* -y
-sudo apt-get install blueman -y
-sudo systemctl enable bluetooth.service
-sudo systemctl start bluetooth.service
 
