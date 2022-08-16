@@ -88,11 +88,13 @@ sudo apt install firefox-esr -y
 sudo apt install evince -y
 # Install task manager
 sudo apt install xfce4-taskmanager -y
-# # Install qemu+kvm virt-manager
+# Install qemu+kvm virt-manager
 # sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
 # sudo systemctl enable libvirtd
 # sudo usermod -aG sudo libvirt-qemu	# Add libvirtd to sudo group
 # sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
+# Install ranger and ueberzug for image preview
+sudo apt install ranger ueberzug -y
 # Install sdk
 cd
 sudo apt install curl unzip zip -y
