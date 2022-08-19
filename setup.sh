@@ -34,6 +34,7 @@ mv polar_space/icons/* ~/.icons/
 mv polar_space/themes/* ~/.themes/
 mv polar_space/fonts/* ~/.fonts/
 mv polar_space/.xinitrc ~/.
+mv polar_space/.vimrc ~/.
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/polybar/launch.sh
 # Install display manager
