@@ -30,12 +30,12 @@ sudo apt install nano vim -y
 sudo apt install build-essential valgrind -y
 # Install java
 sudo apt install openjdk-17-jdk -y
-# # Install vscode
-# sudo apt install curl apt-transport-https -y
-# curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/ms-vscode-keyring.gpg
-# echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
-# sudo apt update -y
-# sudo apt install code -y
+# Install vscode
+sudo apt install curl apt-transport-https -y
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/ms-vscode-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+sudo apt update -y
+sudo apt install code -y
 # # Install sublime-text
 # wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 # sudo apt install apt-transport-https -y
@@ -48,16 +48,16 @@ sudo apt install openjdk-17-jdk -y
 sudo apt install gparted
 # Install mate-calculator
 sudo apt install mate-calc -y
-# # Install spotify
-# curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -
-# echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-# sudo apt update && sudo apt install spotify-client -y
-# Install typora
-# sudo apt install software-properties-common -y
-# wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
-# sudo add-apt-repository 'deb https://typora.io/linux ./'
-# sudo apt update
-# sudo apt install typora -y
+# Install spotify
+curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt update && sudo apt install spotify-client -y
+Install typora
+sudo apt install software-properties-common -y
+wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+sudo add-apt-repository 'deb https://typora.io/linux ./'
+sudo apt update
+sudo apt install typora -y
 # Install discord
 wget -O discord.deb "https://discord.com/api/download?platform=linux&format=deb"
 dpkg-deb -x discord.deb unpack
@@ -95,6 +95,8 @@ sudo apt install xfce4-taskmanager -y
 # sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
 # Install ranger and ueberzug for image preview
 sudo apt install ranger ueberzug -y
+# Install redshift
+sudo apt install redshift -y
 # Install sdk
 cd
 sudo apt install curl unzip zip -y
