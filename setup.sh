@@ -14,7 +14,7 @@
 sudo mv sources.list /etc/apt/sources.list
 sudo apt update && sudo apt upgrade -y
 # Firmware
-mkdir /lib/firmware/rtl_nic/
+sudo mkdir /lib/firmware/rtl_nic/
 sudo mv rtl_nic/*.fw /lib/firmware/rtl_nic/
 sudo update-initramfs -u
 # Desktop Setup

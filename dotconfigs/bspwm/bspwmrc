@@ -20,5 +20,5 @@ bspc rule -a Screenkey manage=off
 #Autostart
 sxhkd &
 picom &
-feh --bg-fill ~/Pictures/Wallpapers/ign_astronaut.png
+feh --bg-fill ~/Pictures/Wallpapers/samurai_forest.jpg
 $HOME/.config/polybar/launch.sh
