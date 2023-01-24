@@ -8,7 +8,7 @@
 # Manual (username user)
 # sudo apt update && sudo apt upgrade -y
 # sudo apt install git -y
-# git clone https://github.com/TvDragon/polar_space
+# git clone https://github.com/TvDragon/debian_setup
 
 # Change to testing branch
 sudo mv sources.list /etc/apt/sources.list
@@ -28,13 +28,13 @@ cd
 mkdir .config .icons .themes .fonts
 mkdir Desktop Downloads Pictures Videos
 mkdir Pictures/Wallpapers
-mv polar_space/Wallpapers/* ~/Pictures/Wallpapers/
-mv polar_space/dotconfigs/* ~/.config/
-mv polar_space/icons/* ~/.icons/
-mv polar_space/themes/* ~/.themes/
-mv polar_space/fonts/* ~/.fonts/
-mv polar_space/.xinitrc ~/.
-mv polar_space/.vimrc ~/.
+mv debian_setup/Wallpapers/* ~/Pictures/Wallpapers/
+mv debian_setup/dotconfigs/* ~/.config/
+mv debian_setup/icons/* ~/.icons/
+mv debian_setup/themes/* ~/.themes/
+mv debian_setup/fonts/* ~/.fonts/
+mv debian_setup/.xinitrc ~/.
+mv debian_setup/.vimrc ~/.
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/polybar/launch.sh
 # Install display manager
