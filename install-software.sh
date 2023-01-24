@@ -49,10 +49,10 @@ sudo apt install gparted
 # Install mate-calculator
 sudo apt install mate-calc -y
 # Install spotify
-curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt update && sudo apt install spotify-client -y
-Install typora
+# Install typora
 sudo apt install software-properties-common -y
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 sudo add-apt-repository 'deb https://typora.io/linux ./'
@@ -67,7 +67,7 @@ dpkg -b unpack discord.deb
 sudo apt install ./discord.deb -y
 # Install onlyoffice
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
-echo 'deb https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
+sudo echo "deb https://download.onlyoffice.com/repo/debian squeeze main" | sudo tee /etc/apt/sources.list.d/onlyoffice.list
 sudo apt update && sudo apt install onlyoffice-desktopeditors -y
 # Install zoom
 wget https://zoom.us/client/latest/zoom_amd64.deb
