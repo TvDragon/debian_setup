@@ -1,4 +1,4 @@
-#!/bin/sh
+bin/sh
 
 # This is a list of applications and software that I use which I install through a script.
 # This script doesn't need to be run.
@@ -30,20 +30,16 @@ sudo apt install nano vim -y
 sudo apt install build-essential valgrind -y
 # Install java
 sudo apt install openjdk-17-jdk -y
-# Install vscode
+# Install vscodium
 sudo apt install curl apt-transport-https -y
-curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/ms-vscode-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
-sudo apt update -y
-sudo apt install code -y
-# # Install sublime-text
-# wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-# sudo apt install apt-transport-https -y
-# echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-# sudo apt update
-# sudo apt install sublime-text -y
-# # Install timeshift, krita, gimp
-# sudo apt install timeshift krita gimp -y
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+sudo apt update && sudo apt install codium -y
+# Install timeshift, krita, gimp
+sudo apt install timeshift krita gimp -y
 # Install gparted
 sudo apt install gparted
 # Install mate-calculator
