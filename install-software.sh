@@ -1,4 +1,4 @@
-bin/sh
+#!/bin/sh
 
 # This is a list of applications and software that I use which I install through a script.
 # This script doesn't need to be run.
@@ -31,13 +31,7 @@ sudo apt install build-essential valgrind -y
 # Install java
 sudo apt install openjdk-17-jdk -y
 # Install vscodium
-sudo apt install curl apt-transport-https -y
-wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
-    | gpg --dearmor \
-    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
-echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
-    | sudo tee /etc/apt/sources.list.d/vscodium.list
-sudo apt update && sudo apt install codium -y
+sudo apt install codium -y
 # Install timeshift, krita, gimp
 sudo apt install timeshift krita gimp -y
 # Install gparted
