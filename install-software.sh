@@ -30,8 +30,10 @@ sudo apt install nano vim -y
 sudo apt install build-essential valgrind -y
 # Install java
 sudo apt install openjdk-17-jdk -y
-# Install vscodium
-sudo apt install codium -y
+# Install vscode
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt install code -y
 # Install timeshift, krita, gimp
 sudo apt install timeshift krita gimp -y
 # Install gparted
