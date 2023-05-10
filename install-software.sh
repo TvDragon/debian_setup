@@ -6,92 +6,94 @@
 # Install applications
 cd
 cd Downloads/
+# Install Nala
+curl -O nala-legacy_0.11.0.deb https://deb.volian.org/volian/pool/main/n/nala-legacy/nala-legacy_0.11.0_amd64.deb
+sudo apt install ./nala-legacy_0.11.0.deb -y
 # Install firmware drivers for intel and qualcomm atheros wireless cards
-sudo apt install firmware-iwlwifi -y
-sudo apt install firmware-atheros -y
+sudo nala install firmware-iwlwifi -y
+sudo nala install firmware-atheros -y
 # Setup bluetooth
-sudo apt-get install bluez* -y
-sudo apt-get install blueman -y
+sudo nala-get install bluez* -y
+sudo nala-get install blueman -y
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 # Install nvidia-drivers
-sudo apt install nvidia-detect -y
-sudo apt install nvidia-driver -y
+sudo nala install nvidia-detect -y
+sudo nala install nvidia-driver -y
 # Install cli-visualizer
 # cd ~/Downloads/
 # export TERM=rxvt-256color
-# sudo apt-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool cmake -y
+# sudo nala-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool cmake -y
 # git clone https://github.com/dpayne/cli-visualizer.git
 # cd cli-visualizer
 # ./install.sh
 # Install text editors
-sudo apt install nano vim -y
+sudo nala install nano vim -y
 # Install build-essentials for GCC/G++ compiler and make
-sudo apt install build-essential valgrind -y
+sudo nala install build-essential valgrind -y
 # Install java
-sudo apt install openjdk-17-jdk -y
+sudo nala install openjdk-17-jdk -y
 # Install vscode
-curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt install code -y
+wget -O code.deb "https://code.visualstudio.com/docs/?dv=linux64_deb"
+sudo nala install ./code.deb -y
 # Install timeshift, krita, gimp
-sudo apt install timeshift krita gimp -y
+sudo nala install timeshift krita gimp -y
 # Install gparted
-sudo apt install gparted
+sudo nala install gparted
 # Install mate-calculator
-sudo apt install mate-calc -y
+sudo nala install mate-calc -y
 # Install spotify
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt update && sudo apt install spotify-client -y
+sudo nala update
+sudo nala install spotify-client -y
 # Install typora
-sudo apt install software-properties-common -y
-wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+sudo nala install software-properties-common -y
+wget -qO - https://typoraio.cn/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc
 sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo apt update
-sudo apt install typora -y
+sudo nala update
+sudo nala install typora -y
 # Install discord
 wget -O discord.deb "https://discord.com/api/download?platform=linux&format=deb"
 dpkg-deb -x discord.deb unpack
 dpkg-deb --control discord.deb unpack/DEBIAN
 sed -i 's/libappindicator1/libayatana-appindicator3-1/g' ./unpack/DEBIAN/control
 dpkg -b unpack discord.deb
-sudo apt install ./discord.deb -y
+sudo nala install ./discord.deb -y
 # Install onlyoffice
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
-sudo echo "deb https://download.onlyoffice.com/repo/debian squeeze main" | sudo tee /etc/apt/sources.list.d/onlyoffice.list
-sudo apt update && sudo apt install onlyoffice-desktopeditors -y
+wget -O onlyoffice-desktop.deb "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb"
+sudo nala install onlyoffice-desktop.deb -y
 # Install zoom
 wget https://zoom.us/client/latest/zoom_amd64.deb
-sudo apt install ./zoom_amd64.deb -y
+sudo nala install ./zoom_amd64.deb -y
 # Install pip3
-sudo apt install python3-pip -y
+sudo nala install python3-pip -y
 # Install pip libraries - flask, pygame
 pip3 install flask pygame
 # Install SDL2 Libraries
-sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev -y
+sudo nala install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev -y
 # Install neofetch
-sudo apt install neofetch -y
+sudo nala install neofetch -y
 # Install sqlitebrowser
-sudo apt install sqlitebrowser -y
+sudo nala install sqlitebrowser -y
 # Install firefox
-sudo apt install firefox-esr -y
+sudo nala install firefox-esr -y
 # Install evince pdf viewer
-sudo apt install evince -y
+sudo nala install evince -y
 # Install task manager
-sudo apt install xfce4-taskmanager -y
+sudo nala install xfce4-taskmanager -y
 # Install qemu+kvm virt-manager
-# sudo apt install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
+# sudo nala install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
 # sudo systemctl enable libvirtd
 # sudo usermod -aG sudo libvirt-qemu	# Add libvirtd to sudo group
 # sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
 # Install ranger and ueberzug for image preview
-sudo apt install ranger ueberzug -y
+sudo nala install ranger ueberzug -y
 # Install redshift
-sudo apt install redshift -y
+sudo nala install redshift -y
 # Install sdk
 cd
-sudo apt install curl unzip zip -y
+sudo nala install curl unzip zip -y
 curl -s "http://get.sdkman.io" | bash
 # Needs to manually be typed below
 # source "$HOME/.sdkman/bin/sdkman-init.sh"
