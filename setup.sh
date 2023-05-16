@@ -35,6 +35,7 @@ mv debian_setup/themes/* ~/.themes/
 mv debian_setup/fonts/* ~/.fonts/
 mv debian_setup/.xinitrc ~/.
 mv debian_setup/.vimrc ~/.
+mv debian_setup/terminal_themes/* /usr/share/xfce4/terminal/colorschemes/
 sudo mkdir /boot/grub/themes
 mv debian_setup/grub_themes/* /boot/grub/themes/
 sudo mv debian_setup/grub /etc/default/grub
