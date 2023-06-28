@@ -13,10 +13,6 @@
 # Change to testing branch
 sudo mv sources.list /etc/apt/sources.list
 sudo apt update && sudo apt upgrade -y
-# Firmware
-sudo mkdir /lib/firmware/rtl_nic/
-sudo mv rtl_nic/*.fw /lib/firmware/rtl_nic/
-sudo update-initramfs -u
 # Desktop Setup
 sudo apt install libnotify-bin notify-osd dunst -y
 sudo apt install bspwm polybar sxhkd pulseaudio pavucontrol thunar rofi suckless-tools picom xfce4-terminal lxpolkit feh lxappearance -y # suckless-tools = dmenu, lxpolkit = xfce-polkit (not on debian)
