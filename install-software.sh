@@ -22,8 +22,8 @@ sudo nala install nvidia-detect -y
 sudo nala install nvidia-driver -y
 # Install text editors
 sudo nala install nano vim -y
-# Install build-essentials for GCC/G++ compiler and make
-sudo nala install build-essential valgrind -y
+# Install build-essentials for GCC/G++ compiler, clangd and make
+sudo nala install build-essential valgrind clangd -y
 # Install java
 sudo nala install openjdk-17-jdk -y
 # Install vscode
