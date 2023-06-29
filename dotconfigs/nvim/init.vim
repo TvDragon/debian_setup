@@ -36,6 +36,9 @@ set completeopt-=preview " For No Previews
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
+" Avoid startup warning
+let g:coc_disable_startup_warning = 1
+
 " --- Just Some Notes ---
 " :PlugClean :PlugInstall :UpdateRemotePlugins
 "
