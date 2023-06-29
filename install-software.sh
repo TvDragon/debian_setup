@@ -61,8 +61,8 @@ wget https://zoom.us/client/latest/zoom_amd64.deb
 sudo nala install ./zoom_amd64.deb -y
 # Install pip3
 sudo nala install python3-pip -y
-# Install pip libraries - flask, pygame
-pip3 install flask pygame
+# Install pip libraries - flask, pygame, jedi
+pip3 install flask pygame jedi
 # Install SDL2 Libraries
 sudo nala install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev -y
 # Install neofetch
