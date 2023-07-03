@@ -1,9 +1,11 @@
 " Global
 set number
 set autoindent
+set encoding=utf-8
 syntax on
 setlocal shiftwidth=4
 setlocal tabstop=4
+setlocal noexpandtab
 :set mouse=a
 
 call plug#begin()
