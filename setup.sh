@@ -48,7 +48,9 @@ mv debian_setup/nvim_plugged/* ~/.local/share/nvim/plugged/
 sudo mkdir /boot/grub/themes
 mv debian_setup/grub_themes/* /boot/grub/themes/
 sudo mv debian_setup/grub /etc/default/grub
+sudo nala install grub -y
 sudo update-grub
+sudo os-prober
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/polybar/launch.sh
 # Install display manager
