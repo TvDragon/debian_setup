@@ -6,31 +6,28 @@
 # Install applications
 cd
 cd Downloads/
-# Install Nala
-curl -O nala-legacy_0.11.0.deb https://deb.volian.org/volian/pool/main/n/nala-legacy/nala-legacy_0.11.0_amd64.deb
-sudo apt install ./nala-legacy_0.11.0.deb -y
-# Install firmware drivers for intel and qualcomm atheros wireless cards
-sudo nala install firmware-iwlwifi -y
-sudo nala install firmware-atheros -y
 # Setup bluetooth
 sudo nala-get install bluez* -y
 sudo nala-get install blueman -y
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
-# Install nvidia-drivers
-sudo nala install nvidia-detect -y
-sudo nala install nvidia-driver -y
 # Install text editors
-sudo nala install nano vim -y
+sudo nala install nano neovim -y
 # Install build-essentials for GCC/G++ compiler, clangd and make
 sudo nala install build-essential valgrind clangd -y
 # Install java
 sudo nala install openjdk-17-jdk -y
 # Install vscode
-wget -O code.deb "https://code.visualstudio.com/docs/?dv=linux64_deb"
-sudo nala install ./code.deb -y
-# Install timeshift, krita, gimp
-sudo nala install timeshift krita gimp -y
+sudo nala install wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+sudo nala install apt-transport-https -y
+sudo nala update
+sudo nala install code -y
+# Install krita, gimp
+sudo nala install krita gimp -y
 # Install gparted
 sudo nala install gparted
 # Install mate-calculator
@@ -87,8 +84,6 @@ sudo nala install xfce4-taskmanager -y
 # sudo systemctl enable libvirtd
 # sudo usermod -aG sudo libvirt-qemu	# Add libvirtd to sudo group
 # sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
-# Install ranger and ueberzug for image preview
-sudo nala install ranger ueberzug -y
 # Install redshift
 sudo nala install redshift -y
 # Install sdk
@@ -100,6 +95,11 @@ curl -s "http://get.sdkman.io" | bash
 # # Install gradle
 # sdk install gradle 7.4
 # sdk use gradle 7.4
+# # Coc plugins
+# nvim ~/.config/nvim/init.vim
+# :PlugInstall
+# cd ~/.local/share/nvim/plugged/coc.nvim
+# npm install -g yarn
+# yarn install
 # Delete all directories and files in Downloads folder
 cd ~/Downloads/
-rm -r *
