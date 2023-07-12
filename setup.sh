@@ -19,6 +19,7 @@ sudo nala install libnotify-bin notify-osd dunst -y
 sudo nala install bspwm polybar sxhkd pulseaudio pavucontrol thunar rofi suckless-tools picom xfce4-terminal lxpolkit feh lxappearance -y # suckless-tools = dmenu, lxpolkit = xfce-polkit (not on debian)
 sudo nala install network-manager -y	# Network Manager and NM Gui
 sudo nala install neovim -y # Neovim
+sudo nala install curl -y	# Curl
 # Neovim autoload directory
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
