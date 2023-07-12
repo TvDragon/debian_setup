@@ -7,8 +7,8 @@
 cd
 cd Downloads/
 # Setup bluetooth
-sudo nala-get install bluez* -y
-sudo nala-get install blueman -y
+sudo nala install bluez* -y
+sudo nala install blueman -y
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 # Install text editors
@@ -16,7 +16,7 @@ sudo nala install nano neovim -y
 # Install build-essentials for GCC/G++ compiler, clangd and make
 sudo nala install build-essential valgrind clangd -y
 # Install java
-sudo nala install openjdk-17-jdk -y
+#sudo nala install openjdk-17-jdk -y
 # Install vscode
 sudo nala install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -44,11 +44,7 @@ sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo nala update
 sudo nala install typora -y
 # Install discord
-wget -O discord.deb "https://discord.com/api/download?platform=linux&format=deb"
-dpkg-deb -x discord.deb unpack
-dpkg-deb --control discord.deb unpack/DEBIAN
-sed -i 's/libappindicator1/libayatana-appindicator3-1/g' ./unpack/DEBIAN/control
-dpkg -b unpack discord.deb
+wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb
 sudo nala install ./discord.deb -y
 # Install onlyoffice
 wget -O onlyoffice-desktop.deb "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb"
@@ -59,7 +55,7 @@ sudo nala install ./zoom_amd64.deb -y
 # Install pip3
 sudo nala install python3-pip -y
 # Install pip libraries - flask, pygame, jedi
-sudo nala install python3-flask python3-pygame python3-jedi
+sudo nala install python3-flask python3-pygame python3-jedi -y
 # Install SDL2 Libraries
 sudo nala install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev -y
 # Install neofetch
@@ -82,7 +78,7 @@ sudo nala install redshift -y
 # Install sdk
 cd
 sudo nala install curl unzip zip -y
-curl -s "http://get.sdkman.io" | bash
+curl -s "https://get.sdkman.io" | bash
 # Needs to manually be typed below
 # source "$HOME/.sdkman/bin/sdkman-init.sh"
 # # Install gradle
