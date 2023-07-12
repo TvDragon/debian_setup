@@ -7,10 +7,10 @@
 cd
 cd Downloads/
 # Setup bluetooth
-sudo nala install bluez* -y
-sudo nala install blueman -y
-sudo systemctl enable bluetooth.service
-sudo systemctl start bluetooth.service
+#sudo nala install bluez* -y
+#sudo nala install blueman -y
+#sudo systemctl enable bluetooth.service
+#sudo systemctl start bluetooth.service
 # Install text editors
 sudo nala install nano neovim -y
 # Install build-essentials for GCC/G++ compiler, clangd and make
@@ -29,7 +29,7 @@ sudo nala install code -y
 # Install krita, gimp
 sudo nala install krita gimp -y
 # Install gparted
-sudo nala install gparted
+sudo nala install gparted -y
 # Install mate-calculator
 sudo nala install mate-calc -y
 # Install spotify
@@ -67,7 +67,7 @@ sudo nala install firefox-esr -y
 # Install evince pdf viewer
 sudo nala install evince -y
 # Install task manager
-sudo nala install xfce4-taskmanager -y
+#sudo nala install xfce4-taskmanager -y
 # Install qemu+kvm virt-manager
 # sudo nala install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
 # sudo systemctl enable libvirtd
