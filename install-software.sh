@@ -66,15 +66,8 @@ sudo nala install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-de
 sudo nala install neofetch -y
 # Install sqlitebrowser
 sudo nala install sqlitebrowser -y
-# Install firefox non-esr
-sudo mkdir /etc/apt/keyrings/
-sudo gpg --keyserver keyserver.ubuntu.com --recv-keys 2667CA5C
-sudo gpg -ao ~/ubuntuzilla.gpg --export 2667CA5C
-cat ubuntuzilla.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/ubuntuzilla.gpg
-sudo rm ~/ubuntuzilla.gpg
-echo "deb [signed-by=/etc/apt/keyrings/ubuntuzilla.gpg] http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main" | sudo tee /etc/apt/sources.list.d/ubuntuzilla.list > /dev/null
-sudo nala update
-sudo nala install firefox-mozilla-build -y
+# Install firefox-esr
+sudo nala install firefox-esr -y
 # Install evince pdf viewer
 sudo nala install evince -y
 # Install task manager
