@@ -7,16 +7,16 @@
 cd
 cd Downloads/
 # Setup bluetooth
-#sudo nala install bluez* -y
-#sudo nala install blueman -y
-#sudo systemctl enable bluetooth.service
-#sudo systemctl start bluetooth.service
+sudo nala install bluez* -y
+sudo nala install blueman -y
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
 # Install text editors
 sudo nala install nano neovim -y
 # Install build-essentials for GCC/G++ compiler, clangd and make
 sudo nala install build-essential valgrind clangd -y
 # Install java
-#sudo nala install openjdk-17-jdk -y
+sudo nala install openjdk-17-jdk -y
 # Install vscode
 sudo nala install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -67,7 +67,7 @@ sudo nala install firefox-esr -y
 # Install evince pdf viewer
 sudo nala install evince -y
 # Install task manager
-#sudo nala install xfce4-taskmanager -y
+sudo nala install xfce4-taskmanager -y
 # Install qemu+kvm virt-manager
 # sudo nala install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
 # sudo systemctl enable libvirtd
