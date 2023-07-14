@@ -72,7 +72,7 @@ sudo nala install xfce4-taskmanager -y
 # sudo usermod -aG sudo libvirt-qemu	# Add libvirtd to sudo group
 # sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
 # Install redshift
-sudo nala install redshift -y
+sudo nala install redshift-gtk -y
 # Install sdk
 cd
 sudo nala install curl unzip zip -y
