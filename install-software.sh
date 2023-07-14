@@ -69,7 +69,7 @@ sudo nala install evince -y
 # Install task manager
 sudo nala install xfce4-taskmanager -y
 # Install qemu+kvm virt-manager
-# sudo nala install virt-manager qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
+# sudo nala install virt-manager qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils ebtables -y
 # sudo systemctl enable libvirtd
 # sudo usermod -aG sudo libvirt-qemu	# Add libvirtd to sudo group
 # sudo usermod -aG libvirt tvdragon	# Add tvdragon to libvirtd group
