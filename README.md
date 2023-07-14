@@ -23,7 +23,8 @@ Polar Space is a minimialistic Linux setup for Debian using the Nord Polar Night
 
 1. First you will need to use the debian server netinst iso image which can be installed from:
 
-	[![](https://www.debian.org/Pics/openlogo-50.png)](https://www.debian.org/distrib/netinst)
+* [![Debian][debian]][Debian-url]
+
 2. Flash debian server netinst onto a usb and install the system onto your drive.
 3. Update your repositories:
 
@@ -38,3 +39,5 @@ Polar Space is a minimialistic Linux setup for Debian using the Nord Polar Night
 
 		sh setup.sh
 
+[debian]: https://img.shields.io/badge/Debian-FFFFFF?style=for-the-badge&logo=debian&logoColor=red
+[Debian-url]: https://www.debian.org/
