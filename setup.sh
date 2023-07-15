@@ -37,7 +37,7 @@ mkdir .config .icons .themes .fonts
 mkdir Desktop Downloads Pictures Videos
 mkdir Pictures/Wallpapers
 cp -r debian_setup/Wallpapers/* ~/Pictures/Wallpapers/
-yes | cp -rf debian_setup/dotconfigs/* ~/.config/
+cp -r debian_setup/dotconfigs/* ~/.config/
 cp -r debian_setup/icons/* ~/.icons/
 cp -r debian_setup/themes/* ~/.themes/
 cp -r debian_setup/fonts/* ~/.fonts/
