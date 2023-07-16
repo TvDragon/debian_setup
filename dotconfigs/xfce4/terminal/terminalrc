@@ -32,4 +32,4 @@ MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
 FontName=FiraCode NF 12
-
+BackgroundDarkness=0.450000
