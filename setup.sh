@@ -10,7 +10,7 @@
 # sudo apt install git -y
 # git clone https://github.com/TvDragon/debian_setup
 
-# Change to testing branch
+# Setting sources.list
 yes | sudo cp -f sources.list /etc/apt/sources.list
 sudo apt update && sudo apt upgrade -y
 sudo apt install nala -y
