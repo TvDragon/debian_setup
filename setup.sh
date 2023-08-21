@@ -17,7 +17,7 @@ sudo apt install nala -y
 # Desktop Setup
 sudo nala install libnotify-bin notify-osd dunst -y
 sudo nala install bspwm polybar sxhkd pulseaudio pavucontrol thunar rofi suckless-tools picom xfce4-terminal policykit-1-gnome feh lxappearance -y # suckless-tools = dmenu, policykit
-sudo nala install network-manager -y	# Network Manager and NM Gui
+sudo nala install network-manager network-manger-gnome -y	# Network Manager and NM Gui
 sudo nala install neovim -y # Neovim
 sudo nala install curl -y	# Curl
 # Neovim autoload directory
