@@ -41,6 +41,7 @@ cp -r debian_setup/dotconfigs/* ~/.config/
 cp -r debian_setup/icons/* ~/.icons/
 cp -r debian_setup/themes/* ~/.themes/
 cp -r debian_setup/fonts/* ~/.fonts/
+sudo cp debian_setup/desktop_icons/* /usr/share/applications/
 cp debian_setup/.xinitrc ~/.
 cp debian_setup/.vimrc ~/.
 sudo cp -r debian_setup/terminal_themes/* /usr/share/xfce4/terminal/colorschemes/
