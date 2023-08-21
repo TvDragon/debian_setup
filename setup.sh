@@ -48,7 +48,6 @@ cp -r debian_setup/nvim_plugged/* ~/.local/share/nvim/plugged/
 sudo mkdir /boot/grub/themes
 sudo cp -r debian_setup/grub_themes/* /boot/grub/themes/
 sudo cp debian_setup/grub /etc/default/grub
-sudo nala install grub -y
 sudo update-grub
 sudo os-prober
 chmod +x ~/.config/bspwm/bspwmrc
