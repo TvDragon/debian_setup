@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=WIFI Rofi
+Comment=rofi wifi menu
+Exec=/home/tvdragon/.config/rofi/rofi-wifi-menu/rofi-wifi-menu.sh
+Terminal=false
+Type=Application
+Hidden=false

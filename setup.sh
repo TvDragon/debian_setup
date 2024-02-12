@@ -10,14 +10,14 @@
 # sudo apt install git -y
 # git clone https://github.com/TvDragon/debian_setup
 
-# Change to testing branch
+# Setting sources.list
 yes | sudo cp -f sources.list /etc/apt/sources.list
 sudo apt update && sudo apt upgrade -y
 sudo apt install nala -y
 # Desktop Setup
 sudo nala install libnotify-bin notify-osd dunst -y
-sudo nala install bspwm polybar sxhkd pulseaudio pavucontrol thunar rofi suckless-tools picom xfce4-terminal lxpolkit feh lxappearance -y # suckless-tools = dmenu, lxpolkit = xfce-polkit (not on debian)
-sudo nala install network-manager -y	# Network Manager and NM Gui
+sudo nala install bspwm polybar sxhkd pulseaudio pavucontrol thunar rofi suckless-tools picom xfce4-terminal policykit-1-gnome feh lxappearance -y # suckless-tools = dmenu, policykit
+sudo nala install network-manager network-manger-gnome -y	# Network Manager and NM Gui
 sudo nala install neovim -y # Neovim
 sudo nala install curl -y	# Curl
 # Neovim autoload directory
@@ -41,6 +41,7 @@ cp -r debian_setup/dotconfigs/* ~/.config/
 cp -r debian_setup/icons/* ~/.icons/
 cp -r debian_setup/themes/* ~/.themes/
 cp -r debian_setup/fonts/* ~/.fonts/
+sudo cp debian_setup/desktop_icons/* /usr/share/applications/
 cp debian_setup/.xinitrc ~/.
 cp debian_setup/.vimrc ~/.
 sudo cp -r debian_setup/terminal_themes/* /usr/share/xfce4/terminal/colorschemes/
@@ -48,7 +49,6 @@ cp -r debian_setup/nvim_plugged/* ~/.local/share/nvim/plugged/
 sudo mkdir /boot/grub/themes
 sudo cp -r debian_setup/grub_themes/* /boot/grub/themes/
 sudo cp debian_setup/grub /etc/default/grub
-sudo nala install grub -y
 sudo update-grub
 sudo os-prober
 chmod +x ~/.config/bspwm/bspwmrc

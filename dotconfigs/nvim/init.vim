@@ -22,6 +22,9 @@ Plug 'vim-airline/vim-airline'			" Status Bar
 Plug 'vim-airline/vim-airline-themes'	" Airline Themes
 Plug 'tc50cal/vim-terminal'				" Vim Terminal
 Plug 'tpope/vim-commentary'				" For Commenting gcc & gc
+Plug 'lewis6991/gitsigns.nvim'			" OPTIONAL: for git status
+Plug 'nvim-tree/nvim-web-devicons' 		" OPTIONAL: for file icons
+Plug 'romgrk/barbar.nvim'
 
 set encoding=UTF-8
 
@@ -32,6 +35,17 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR> " CTRL + t
 
 nmap <F4> :TagbarToggle<CR>
+
+" Open a file in a new buffer:
+" 	- In the `:NERDTree` view I can open a file `i` to split tab horizontally,
+" 	`s` to split tab vertically, `t` to open file in a new tab
+"    - To open a specific file in a new tab we do `:tabnew filename.txt`.
+"    e.g. `:tabnew main.c`
+" Switch focus between files and `:NERDTree` view by doing `Ctrl + w + hjkl`
+" Switch to next tab: `gt`
+" Switch to previous tab: `gT`
+" Siwtch to specific tab: number `gt`. e.g. `3gt` means switch to 3rd tab
+"
 
 set completeopt-=preview " For No Previews
 
