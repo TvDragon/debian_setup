@@ -71,6 +71,7 @@ fi
 cp debian_setup/.xinitrc ~/.
 cp debian_setup/.vimrc ~/.
 sudo cp -r debian_setup/terminal_themes/* /usr/share/xfce4/terminal/colorschemes/
+yes | sudo cp -f debian_setup/network-interfaces /etc/network/interfaces
 #sudo mkdir /boot/grub/themes
 #sudo cp -r debian_setup/grub_themes/* /boot/grub/themes/
 #sudo cp debian_setup/grub /etc/default/grub

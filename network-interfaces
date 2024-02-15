@@ -1,0 +1,17 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The wireless network interface
+allow-hotplug wlo1
+iface wlo1 inet dhcp
+
+# The primary network interface (assuming it's wired)
+# auto eth0  # Uncomment this line if you want to enable auto-start for a wired interface
+# iface eth0 inet dhcp  # Uncomment this line if you want to use DHCP for a wired interface
+
