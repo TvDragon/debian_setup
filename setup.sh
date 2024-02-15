@@ -10,15 +10,34 @@
 # sudo apt install git -y
 # git clone https://github.com/TvDragon/debian_setup
 
-# Setting sources.list
+# Ask user if they wish to install BSPWM or XFWM4 as the window manager
+read -p "Do you wish to use BSPWM or XFWM4 as your window manager? (1/2) " window_manager
+
+while [ "$window_manager" != "1" ] && [ "$window_manager" != "2" ] ; do
+       echo "\nEnter 1 for BSPWM or 2 for XFWM4 as the window manager to install."
+       read -p "Do you wish to use BSPWM or XFWM4 as your window manager? (1/2) " window_manager
+done
+
+# Update packages
 sudo apt update && sudo apt upgrade -y
 sudo apt install nala -y
-# Install Essentail Programs
-sudo nala install libnotify-bin notify-osd dunst -y
-sudo nala install bspwm polybar sxhkd pulseaudio pavucontrol thunar thunar-archive-plugin rofi suckless-tools picom xfce4-terminal policykit-1-gnome feh lxappearance -y # suckless-tools = dmenu, policykit
-sudo nala install network-manager network-manger-gnome -y	# Network Manager and NM Gui
-sudo nala install curl unzip -y	# Curl and Unzip
+# Install Essential Programs
+sudo nala install pulseaudio pavucontrol thunar thunar-archive-plugin \
+       network-manager network-manager-gnome xfce4-terminal curl unzip -y
+if [ "$window_manager" = "1" ] ; then
+       echo "BSPWM selected"
+       sudo nala install bspwm polybar sxhkd rofi libnotify-bin notify-osd dunst \
+              suckless-tools policykit-1-gnome feh lxappearance -y # suckless-tools = dmenu, policykit
+elif [ "$window_manager" = "2" ] ; then
+       echo "XFWM4 selected"
+       sudo nala install xfwm4 xinit xfce4-settings xfce4-session \
+              xfce4-notifyd xfce4-panel xfce4-panel-profiles \
+              xfce4-power-manager-plugins xfce4-pulseaudio-plugin \
+              xfce4-wavelan-plugin xfce4-whiskermenu-plugin xfce4-windowck-plugin -y
+fi
+
 # Install other less important programs
+sudo nala install xfce4-taskmanager xfce4-screenshooter ristretto -y
 sudo nala install neovim -y # Neovim
 # Neovim autoload directory
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -29,8 +48,7 @@ source ~/.bashrc
 nvm install --lts
 # Install universal ctags for neovim tagbar code navigation
 sudo nala install universal-ctags -y
-# Make directory so applications like spotify can be opened using rofi
-sudo mkdir /usr/share/desktop-directories/
+
 # Copy directories over
 cd
 mkdir .config .icons .themes .fonts
@@ -45,7 +63,11 @@ git clone https://www.opencode.net/adhe/gruvboxplasma.git
 cp -r gruvboxplasma/icons/Gruvbox ~/.icons/
 cp -r debian_setup/dotthemes/* ~/.themes/
 cp -r debian_setup/dotfonts/* ~/.fonts/
-sudo cp debian_setup/desktop_icons/* /usr/share/applications/
+if [ "$window_manager" = "1" ]; then
+       # Make directory so applications like spotify can be opened using rofi
+       sudo mkdir /usr/share/desktop-directories/
+       sudo cp debian_setup/desktop_icons/* /usr/share/applications/
+fi
 cp debian_setup/.xinitrc ~/.
 cp debian_setup/.vimrc ~/.
 sudo cp -r debian_setup/terminal_themes/* /usr/share/xfce4/terminal/colorschemes/
@@ -56,6 +78,7 @@ sudo update-grub
 sudo os-prober
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/polybar/launch.sh
+
 # Install display manager
 sudo nala install lightdm -y
 sudo systemctl enable lightdm
