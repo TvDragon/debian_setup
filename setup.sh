@@ -55,7 +55,6 @@ mkdir .config .icons .themes .fonts
 mkdir Desktop Downloads Pictures Videos
 mkdir Pictures/Wallpapers
 cp -r debian_setup/Wallpapers/* ~/Pictures/Wallpapers/
-cp -r debian_setup/dotconfigs/* ~/.config/
 cp -r debian_setup/doticons/* ~/.icons/
 wget https://github.com/SylEleuth/gruvbox-plus-icon-pack/releases/download/v5.0.1/gruvbox-plus-icon-pack-5.0.1.zip
 unzip gruvbox-plus-icon-pack-5.0.1.zip -d ~/.icons/
@@ -64,11 +63,15 @@ cp -r gruvboxplasma/icons/Gruvbox ~/.icons/
 cp -r debian_setup/dotthemes/* ~/.themes/
 cp -r debian_setup/dotfonts/* ~/.fonts/
 if [ "$window_manager" = "1" ]; then
+       cp -r debian_setup/dotconfigs-bspwm/* ~/.config/
        # Make directory so applications like spotify can be opened using rofi
        sudo mkdir /usr/share/desktop-directories/
        sudo cp debian_setup/desktop_icons/* /usr/share/applications/
+       cp debian_setup/.xinitrc-bspwm ~/.xinitrc
+elif [ "$window_manager" = "2" ]; then
+       cp -r debian_setup/dotconfigs-xfwm4/* ~/.config/
+       cp debian_setup/.xinitrc-xfwm4 ~/.xinitrc
 fi
-cp debian_setup/.xinitrc ~/.
 cp debian_setup/.vimrc ~/.
 sudo cp -r debian_setup/terminal_themes/* /usr/share/xfce4/terminal/colorschemes/
 yes | sudo cp -f debian_setup/network-interfaces /etc/network/interfaces
@@ -77,8 +80,10 @@ yes | sudo cp -f debian_setup/network-interfaces /etc/network/interfaces
 #sudo cp debian_setup/grub /etc/default/grub
 sudo update-grub
 sudo os-prober
-chmod +x ~/.config/bspwm/bspwmrc
-chmod +x ~/.config/polybar/launch.sh
+if [ "$window_manager" = "1" ]; then
+       chmod +x ~/.config/bspwm/bspwmrc
+       chmod +x ~/.config/polybar/launch.sh
+fi
 
 # Install display manager
 sudo nala install lightdm -y
