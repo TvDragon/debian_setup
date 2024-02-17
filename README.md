@@ -46,9 +46,11 @@ Polar Space is a minimialistic Linux setup for Debian using the Gruvbox Dark B T
 	Before running the script you may wish to use a different terminal emulator. If so, then open up ``setup.sh`` script and change xfce4-terminal to your desired terminal emulator.
 
 	- BSPWM
+
 		Afterwards open up ``dotconfigs/sxhkd/sxhkdrc`` and change and change the command ``xfce4-terminal`` to the command for your desired terminal emulator.
 	
 	- XFWM4
+
 		After running step 6, reboot the system and go to keyboard shortcuts to change which terminal to open by default when entering the commands for Ctrl + Alt + t.
 6. Run the ``setup.sh`` script:
 
