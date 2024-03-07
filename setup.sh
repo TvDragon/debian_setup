@@ -23,7 +23,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install nala -y
 # Install Essential Programs
 sudo nala install pulseaudio pavucontrol thunar thunar-archive-plugin \
-       network-manager network-manager-gnome xfce4-terminal curl unzip -y
+       network-manager network-manager-gnome xfce4-terminal curl unzip psmisc -y
 if [ "$window_manager" = "1" ] ; then
        echo "BSPWM selected"
        sudo nala install bspwm polybar sxhkd rofi libnotify-bin notify-osd dunst \
