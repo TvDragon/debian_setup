@@ -27,7 +27,7 @@ sudo nala install pulseaudio pavucontrol thunar thunar-archive-plugin \
 if [ "$window_manager" = "1" ] ; then
        echo "BSPWM selected"
        sudo nala install bspwm polybar sxhkd rofi libnotify-bin notify-osd dunst \
-              suckless-tools policykit-1-gnome feh lxappearance -y # suckless-tools = dmenu, policykit
+              suckless-tools i3lock policykit-1-gnome feh lxappearance -y # suckless-tools = dmenu, policykit
 elif [ "$window_manager" = "2" ] ; then
        echo "XFWM4 selected"
        sudo nala install xfwm4 xinit xfce4-settings xfce4-session \

@@ -5,82 +5,42 @@ uptime=$(uptime -p | sed -e 's/up //g')
 POSITION=0
 YOFF=0
 XOFF=0
-FONT="FiraCode Nerd Font 10"
+FONT="FiraCode Nerd Font 12"
 
-shutdown = " Shutdown"
-reboot = "󰜉 Restart"
-lock = " Lock"
-suspend = "󰤄 Sleep"
-logout = "󰍃 Logout"
+# Confirmation
+confirm_exit() {
+	rofi -dmenu -no-config -i -no-fixed-num-lines -p "Are you sure? : " -font "$FONT"
+}
 
-options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
-chosen=$(echo -e "$options" | rofi -dmenu -p "Uptime: $uptime" -font "$FONT")
-if [ "$chosen" = "$shutdown" ] ; then
-	systemctl poweroff
-elif [ "$chosen" = "$reboot" ] ; then
-	systemctl reboot
-elif [ "$chosen" = "$suspend" ] ; then
-	# Mute volume
-	pactl set-sink-mute @DEFAULT_SINK@ 1
-	systemctl suspend
-elif [ "$chosen" = "$logout" ] ; then
-	bspc quit
-fi
+# Define options using an associative array
+declare -A options
+options=(
+    ["lock"]="󰌾 Lock"
+    ["reboot"]="󰜉 Restart"
+    ["logout"]="󰍃 Logout"
+    ["shutdown"]="󰐥 Shutdown"
+)
 
-# case $chosen in
-#     $shutdown)
-# 		ans=$(confirm_exit &)
-# 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-# 			systemctl poweroff
-# 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
-# 			exit 0
-#         else
-# 			msg
-#         fi
-#         ;;
-#     $reboot)
-# 		ans=$(confirm_exit &)
-# 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-# 			systemctl reboot
-# 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
-# 			exit 0
-#         else
-# 			msg
-#         fi
-#         ;;
-#     $lock)
-# 		if [[ -f /usr/bin/i3lock ]]; then
-# 			i3lock
-# 		elif [[ -f /usr/bin/betterlockscreen ]]; then
-# 			betterlockscreen -l
-# 		fi
-#         ;;
-#     $suspend)
-# 		ans=$(confirm_exit &)
-# 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-# 			mpc -q pause
-# 			amixer set Master mute
-# 			systemctl suspend
-# 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
-# 			exit 0
-#         else
-# 			msg
-#         fi
-#         ;;
-#     $logout)
-# 		ans=$(confirm_exit &)
-# 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-# 			if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
-# 				openbox --exit
-# 			elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
-# 				bspc quit
-# 			elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
-# 				i3-msg exit
-# 			fi
-# 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
-# 			exit 0
-#         else
-# 			msg
-#         fi
-#         ;;
-# esac
+# Construct the options string for rofi
+options_string=$(printf "%s\n" "${options[@]}")
+
+# Use rofi to select an option
+chosen=$(echo -e "$options_string" | rofi -i -dmenu -p "Uptime: $uptime" -font "$FONT")
+
+# Check the chosen option and execute the corresponding action
+case $chosen in
+    "${options["shutdown"]}")
+        systemctl poweroff
+		;;
+    "${options["reboot"]}")
+        systemctl reboot
+        ;;
+    "${options["lock"]}")
+        # Mute volume
+        pactl set-sink-mute @DEFAULT_SINK@ 1
+		i3lock
+        ;;
+    "${options["logout"]}")
+        bspc quit
+        ;;
+esac
