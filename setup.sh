@@ -48,6 +48,8 @@ source ~/.bashrc
 nvm install --lts
 # Install universal ctags for neovim tagbar code navigation
 sudo nala install universal-ctags -y
+# Remove program not needed
+sudo nala remove imagemagick* -y
 
 # Copy directories over
 cd
