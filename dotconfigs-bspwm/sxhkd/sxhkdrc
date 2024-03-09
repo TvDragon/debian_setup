@@ -10,8 +10,9 @@ super + Return
 super + @space
 	dmenu_run
 
+# rofi - showing applications and launch them
 super + r
-	rofi -show drun
+	rofi -i -show drun -modi drun -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
