@@ -27,5 +27,5 @@ bspc rule -a Screenkey manage=off
 #Autostart
 sxhkd &
 picom &
-xwallpaper --output HDMI-1 --center Pictures/Wallpapers/astral-grave-vaporwave-flowers.png --output HDMI-2 --center Pictures/Wallpapers/ngvJK19.jpeg
+xwallpaper --output HDMI-1 --center Pictures/Wallpapers/astral-grave-flowers.png --output HDMI-2 --center Pictures/Wallpapers/ngvJK19.jpeg
 $HOME/.config/polybar/launch.sh
