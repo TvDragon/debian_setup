@@ -40,8 +40,8 @@ sudo nala install ./discord.deb -y
 wget -O onlyoffice-desktop.deb "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb"
 sudo nala install onlyoffice-desktop.deb -y
 # Install zoom
-wget https://zoom.us/client/latest/zoom_amd64.deb
-sudo nala install ./zoom_amd64.deb -y
+#wget https://zoom.us/client/latest/zoom_amd64.deb
+#sudo nala install ./zoom_amd64.deb -y
 # Install pip3
 sudo nala install python3-pip -y
 # Install pip libraries - flask, pygame, jedi
