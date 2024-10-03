@@ -15,8 +15,6 @@ sudo systemctl start bluetooth.service
 sudo nala install nano neovim -y
 # Install build-essentials for GCC/G++ compiler, clangd and make
 sudo nala install build-essential valgrind clangd -y
-# Install java
-#sudo nala install openjdk-17-jdk -y
 # Install vscode
 sudo nala install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -26,8 +24,6 @@ rm -f packages.microsoft.gpg
 sudo nala install apt-transport-https -y
 sudo nala update
 sudo nala install code -y
-# Install krita, gimp
-sudo nala install krita gimp -y
 # Install gparted
 sudo nala install gparted -y
 # Install mate-calculator
@@ -37,12 +33,6 @@ curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo nala update
 sudo nala install spotify-client -y
-# Install typora
-sudo nala install software-properties-common -y
-wget -qO - https://typoraio.cn/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc
-sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo nala update
-sudo nala install typora -y
 # Install discord
 wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb
 sudo nala install ./discord.deb -y
