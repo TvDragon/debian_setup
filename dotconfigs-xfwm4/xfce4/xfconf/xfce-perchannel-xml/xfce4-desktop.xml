@@ -37,7 +37,8 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="1"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/tvdragon/Pictures/Wallpapers/1300564.jpg"/>
+          <property name="last-image" type="string" value="/home/tvdragon/Pictures/Wallpapers/astral-grave-anime-girl.png"/>
+          <property name="backdrop-cycle-enable" type="bool" value="false"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="1"/>
@@ -79,7 +80,21 @@
           <property name="last-image" type="string" value="/usr/share/images/desktop-base/default"/>
         </property>
       </property>
+      <property name="monitorHDMI-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/home/tvdragon/Pictures/Wallpapers/chibaolin-vertical.png"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="1"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/default"/>
+        </property>
+      </property>
     </property>
+    <property name="single-workspace-mode" type="bool" value="true"/>
+    <property name="single-workspace-number" type="int" value="0"/>
   </property>
   <property name="desktop-icons" type="empty">
     <property name="style" type="int" value="0"/>
