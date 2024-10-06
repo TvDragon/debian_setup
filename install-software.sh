@@ -24,6 +24,8 @@ rm -f packages.microsoft.gpg
 sudo nala install apt-transport-https -y
 sudo nala update
 sudo nala install code -y
+# Install vscode extensions
+cat vscode-extensions-list.txt | xargs -n 1 code --install-extension
 # Install gparted
 sudo nala install gparted -y
 # Install mate-calculator

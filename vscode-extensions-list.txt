@@ -1,0 +1,10 @@
+eamodio.gitlens
+jdinhlife.gruvbox
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
+ms-vscode.cpptools
+ms-vscode.makefile-tools
+tomoki1207.pdf
+vscodevim.vim
+yzane.markdown-pdf
