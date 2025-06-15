@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Rofi
+Comment=
+Exec=rofi -i -show drun -modi drun -show-icons -theme gruvbox-dark-soft
+Icon=app-launcher
+Path=
+Terminal=false
+StartupNotify=false

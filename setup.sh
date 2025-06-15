@@ -33,7 +33,7 @@ elif [ "$window_manager" = "2" ] ; then
        sudo nala install xfwm4 xinit xfce4-settings xfce4-session \
               xfce4-notifyd xfce4-panel xfce4-panel-profiles \
               xfce4-power-manager-plugins xfce4-pulseaudio-plugin \
-              xfce4-wavelan-plugin xfce4-whiskermenu-plugin xfce4-windowck-plugin -y
+              xfce4-wavelan-plugin xfce4-whiskermenu-plugin xfce4-windowck-plugin rofi -y
 fi
 
 # Install other less important programs

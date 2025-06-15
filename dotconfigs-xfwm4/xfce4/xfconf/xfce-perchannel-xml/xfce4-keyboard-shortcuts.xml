@@ -49,7 +49,6 @@
       <property name="HomePage" type="string" value="exo-open --launch WebBrowser"/>
       <property name="XF86Display" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
-      <property name="&lt;Super&gt;r" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="F2" type="string" value="thunar"/>
       <property name="F1" type="string" value="firefox-esr"/>
       <property name="&lt;Super&gt;e" type="string" value="firefox-esr"/>
@@ -57,6 +56,8 @@
       <property name="F4" type="string" value="spotify %U"/>
       <property name="F3" type="string" value="discord"/>
       <property name="&lt;Super&gt;Return" type="string" value="xfce4-terminal"/>
+      <property name="F5" type="string" value="code"/>
+      <property name="&lt;Super&gt;r" type="string" value="rofi -i -show drun -modi drun -show-icons -theme gruvbox-dark-soft"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
