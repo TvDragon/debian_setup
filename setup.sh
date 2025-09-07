@@ -107,4 +107,5 @@ if [ "$gpu" = "amd" ] ; then
 	#echo "Afterwards do 'sudo nala update'"
 	sudo nala update
 	sudo nala install firmware-amd-graphics libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all -y
+	systemctl --user restart pulseaudio.service
 fi
