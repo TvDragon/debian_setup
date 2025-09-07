@@ -93,3 +93,18 @@ fi
 sudo nala install lightdm -y
 sudo systemctl enable lightdm
 sudo systemctl set-default graphical.target
+
+while [ "$gpu" != "amd" ] && [ "$gpu" != "nvidia" ] ; do
+	read -p "\nWhich GPU are you using (amd/nvidia)?" gpu
+done
+
+if [ "$gpu" = "amd" ] ; then
+	sudo apt purge *nvidia*
+	sudo nala install software-properties-common -y
+	sudo apt-add-repository contrib non-free-firmware
+	#echo "Please add contrib and non-free-firmware components to /etc/apt/sources.list, for example:"
+	#echo "deb http://deb.debian.org/debian bookworm main contrib non-free-firmware"
+	#echo "Afterwards do 'sudo nala update'"
+	sudo nala update
+	sudo nala install firmware-amd-graphics libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all -y
+fi
