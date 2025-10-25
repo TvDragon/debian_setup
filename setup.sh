@@ -27,7 +27,7 @@ sudo nala install pulseaudio pavucontrol thunar thunar-archive-plugin \
 if [ "$window_manager" = "1" ] ; then
 	   echo "BSPWM selected"
 	   sudo nala install bspwm polybar sxhkd rofi libnotify-bin notify-osd dunst \
-			  suckless-tools i3lock policykit-1-gnome xwallpaper lxappearance -y # suckless-tools = dmenu, policykit
+			  suckless-tools i3lock xwallpaper lxappearance -y # suckless-tools = dmenu, policykit
 elif [ "$window_manager" = "2" ] ; then
 	   echo "XFWM4 selected"
 	   sudo nala install xfwm4 xinit xfce4-settings xfce4-session \
@@ -36,6 +36,9 @@ elif [ "$window_manager" = "2" ] ; then
 			  xfce4-wavelan-plugin xfce4-whiskermenu-plugin xfce4-windowck-plugin rofi -y
 fi
 
+# Install policykit
+cd packages
+sudo nala install ./debian_setup/packages/policykit-1-gnome_0.105-8_amd64.deb -y
 # Install other less important programs
 sudo nala install xfce4-taskmanager xfce4-screenshooter ristretto -y
 sudo nala install notepadqq -y # Notepadqq

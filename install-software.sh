@@ -31,8 +31,8 @@ sudo nala install gparted -y
 # Install mate-calculator
 sudo nala install mate-calc -y
 # Install spotify
-curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo nala update
 sudo nala install spotify-client -y
 # Install discord
@@ -50,8 +50,8 @@ sudo nala install python3-pip -y
 sudo nala install python3-flask python3-pygame python3-jedi python3-pylint-common -y
 # Install SDL2 Libraries
 sudo nala install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev -y
-# Install neofetch
-sudo nala install neofetch -y
+# Install fastfetch
+sudo nala install fastfetch -y
 # Install sqlitebrowser
 sudo nala install sqlitebrowser -y
 # Install firefox-esr
