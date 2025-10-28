@@ -98,17 +98,26 @@ sudo systemctl enable lightdm
 sudo systemctl set-default graphical.target
 
 while [ "$gpu" != "amd" ] && [ "$gpu" != "nvidia" ] ; do
-	read -p "\nWhich GPU are you using (amd/nvidia)?" gpu
+	read -p "\nWhich GPU are you using (amd/nvidia)? Please type amd or nvidia." gpu
 done
 
+version=$(lsb_release -a 2>/dev/null | tail -n 1 | awk '{print $2}')
 if [ "$gpu" = "amd" ] ; then
-	sudo apt purge *nvidia*
-	sudo nala install software-properties-common -y
-	sudo apt-add-repository contrib non-free-firmware
-	#echo "Please add contrib and non-free-firmware components to /etc/apt/sources.list, for example:"
-	#echo "deb http://deb.debian.org/debian bookworm main contrib non-free-firmware"
-	#echo "Afterwards do 'sudo nala update'"
+	sudo apt purge *nvidia* -y
+	if [ "$version" = "bookworm" ] ; then
+		sudo nala install software-properties-common -y
+		sudo apt-add-repository contrib non-free-/firmware
+		#echo "Please add contrib and non-free-firmware components to /etc/apt/sources.list, for example:"
+		#echo "deb http://deb.debian.org/debian bookworm main contrib non-free-firmware"
+		#echo "Afterwards do 'sudo nala update'"
+	fi
 	sudo nala update
 	sudo nala install firmware-amd-graphics libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all -y
 	systemctl --user restart pulseaudio.service
 fi
+
+# Delete copied folders
+cd
+rm -r gruvbox*
+
+sudo reboot
