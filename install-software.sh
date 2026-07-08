@@ -26,6 +26,8 @@ sudo nala update
 sudo nala install code -y
 # Install vscode extensions
 cat vscode-extensions-list.txt | xargs -n 1 code --install-extension
+# Install meld
+sudo nala install meld -y
 # Install gparted
 sudo nala install gparted -y
 # Install mate-calculator
